@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2 id="paragraph">Enter some string to replace every character in a given string with the character
+        following it in the alphabet</h2>
+
+    <button onclick="countWords()">count</button>
+    <script>
+        function countWords() {
+            const paragraph = document.querySelector('#paragraph');
+            const wordCount = paragraph.innerText.split(' ').length;
+            alert('Number of words: ' + wordCount);
+        }
+        
+    </script>
+</body>
+</html>

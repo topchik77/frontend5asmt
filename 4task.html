@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Enter some string to replace every character in a given string with the character
+        following it in the alphabet</h2>
+    <input id="inpt">
+    <button onclick="replaceChar()">replace</button>
+
+    <script>
+        function replaceChar(){
+            const input = document.getElementById('inpt').value;
+
+            let shiftString = input.split("").map(char => {
+            return String.fromCharCode(char.charCodeAt(0) + 1);
+            }).join("");
+
+            alert(`Результат: ${shiftString}`);
+        }
+    </script>
+</body>
+</html>

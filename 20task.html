@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: bisque;
+        }
+        .clock {
+            width: 550px;
+            height: 150px;  
+            position: absolute;
+            margin: 350px 650px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .clock div{
+            position: relative;
+            background-color: #ffff;
+            height: 100%;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Open Sans',sans-serif;
+            font-size: 77px;
+            border-radius: 15px;
+        }
+
+        .clock span {
+            font-size: 77px;
+            color: #535353;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="clock">
+        <div id="hours">00</div>
+        <span>:</span>
+        <div id="minutes">00</div>
+        <span>:</span>
+        <div id="seconds">00</div>
+    </div>
+
+    <script>
+        var hour = document.getElementById('hours');
+        var minutes = document.getElementById('minutes');
+        var seconds = document.getElementById('seconds');
+
+        var clock = setInterval(
+            function time(){
+                var date_Now = new Date();
+                var h = date_Now.getHours();
+                var min = date_Now.getMinutes();
+                var sec = date_Now.getSeconds();
+
+                if (h < 10){
+                    h = '0' + hr;
+                }
+                if (min < 10) {
+                    min = '0' + min;
+                }
+                if (sec < 10) {
+                    sec = '0' + sec;
+                }
+
+                hour.textContent = h;
+                minutes.textContent = min;
+                seconds.textContent = sec;
+            },1000
+        );
+    </script>
+</body>
+</html>

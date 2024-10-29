@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="paragraph">Enter some string to replace every character in alphabet given string with the character
+        following it in the alphabet</p>
+
+    <button onclick="highlightSpecialWords()">highlight</button>
+
+    <script>
+        function highlightSpecialWords() {
+            const paragraph = document.querySelector('#paragraph');
+            const words = paragraph.innerText.split(' ');
+        
+            const modifiedWords = words.map(word => {
+                if (word.startsWith('a') || word.startsWith('A')) {
+                    return `<i>${word}</i>`;
+                } else if (word.endsWith('y')) {
+                    return `<u>${word}</u>`;
+                }
+                return word;
+            });
+            paragraph.innerHTML = modifiedWords.join(' ');
+        }
+        
+    </script>
+</body>
+</html>

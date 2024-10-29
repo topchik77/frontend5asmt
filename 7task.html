@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="paragraph">Are you okay? Go to hospital!</h3>
+    <button onclick="change()">change symbols</button>
+    <script>
+        function change(){
+            const paragraph = document.querySelector('#paragraph');
+            paragraph.innerHTML = paragraph.innerHTML.replace(/\?/g, '*').replace(/!/g, '@');
+        }
+    </script>
+</body>
+</html>

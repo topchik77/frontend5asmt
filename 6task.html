@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="paragraph">Both map and reduce have as input the array and a function you define. They are in some way complementary: map cannot return one single element for an array of multiple elements, while reduce will always return the accumulator you eventually changed.</p>
+
+    <button onclick="highlightWords()">Change paragraph</button>
+
+    <script>
+        function highlightWords() {
+            const paragraph = document.querySelector('#paragraph');
+            const words = paragraph.innerText.split(' ');
+            
+            const changedWords = words.map(word => {
+                if (word.length > 7) {
+                    return `<span style="background-color: blue; color: white">${word}</span>`;
+                } else if (word.length < 3) {
+                    return `<b>${word}</b>`;
+                }
+                return word;
+            });
+
+            paragraph.innerHTML = changedWords.join(' ');
+        }
+    </script>
+</body>
+</html>

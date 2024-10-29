@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Enter any words to order in alphabetical order each letters in each word:</h2>
+    <input id="inpt">
+    <button onclick="alphOrder()">Sort Letters</button>
+    <p id="res"></p>
+
+    <script>
+        function alphOrder(){
+            const input = document.getElementById('inpt').value;
+            const words = input.split(" ");
+        
+            const sorted = words.map(word => word.split("")
+                    .sort((a, b) => {
+                        const aLower = a.toLowerCase();
+                        const bLower = b.toLowerCase();
+                        
+                        if (aLower === bLower) {
+                            return a === a.toLowerCase() ? -1 : 1;
+                        }
+                        
+                        return aLower < bLower ? -1 : 1;
+                    })
+                    .join("")
+            );
+
+            document.getElementById("res").textContent = 'Sorted words: ' + sorted.join(" ");
+        }
+    </script>
+</body>
+</html>

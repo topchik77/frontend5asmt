@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const word1 = prompt("Enter first string:");
+        const word2 = prompt("Enter second string:");
+        const word3 = prompt("Enter third string:");
+
+        const words = [word1, word2, word3];
+        let longest = words.reduce((a, b) => (a.length > b.length ? a : b));
+        let shortest = words.reduce((a, b) => (a.length < b.length ? a : b));
+
+        document.body.innerHTML = `<h3>Longest string: ${longest}</h3><h3>Shortest string: ${shortest}</h3>`;
+    </script>
+</body>
+</html>

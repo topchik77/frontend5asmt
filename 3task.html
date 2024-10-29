@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Write any word to find the first not repeated character</h2>
+    <input type="text" id="inpt"> <button onclick="FirstUniqChar()">Find</button>
+    <h3 id="res"></h3>
+    <script>
+        function FirstUniqChar() {
+            const s = document.getElementById('inpt').value;
+            const charCount = {};
+
+            for (let i = 0; i < s.length; i++) {
+                const char = s[i];
+                charCount[char] = charCount[char] + 1 || 1;
+            }
+
+            for (let i = 0; i < s.length; i++) {
+                const char = s[i];
+                if (charCount[char] === 1) {
+                    document.getElementById('res').innerHTML = `First unique letter in the word is "${char}"`;
+                    return;
+                }
+            }
+            
+            document.getElementById('res').innerHTML = "No unique characters found";
+        }
+    </script>
+</body>
+</html>
